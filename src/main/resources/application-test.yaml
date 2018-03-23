@@ -7,4 +7,4 @@ spring:
         git:
           uri: git@github.com:SpringCloudify/config-repo-demo.git
 server:
-  port: 1201
+  port: 12111
