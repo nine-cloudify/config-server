@@ -1,4 +1,4 @@
-package com.springcloudify.configserver;
+package com.springcloudify.cloudy.configserver;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
