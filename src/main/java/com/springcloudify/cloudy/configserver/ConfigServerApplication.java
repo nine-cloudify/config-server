@@ -1,11 +1,11 @@
 package com.springcloudify.cloudy.configserver;
 
 import org.springframework.boot.WebApplicationType;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.config.server.EnableConfigServer;
 
-@SpringBootApplication
+@SpringCloudApplication
 @EnableConfigServer
 public class ConfigServerApplication {
 
