@@ -1,36 +1,7 @@
+info:
+  description: Spring Cloud Config  Server
+
 spring:
   profiles:
     active:
       - dev
-      - jdbc
-
-  datasource:
-    platform: mysql
-#    schema: classpath:schema-jdbc.sql
-#    data: classpath:data-jdbc.sql
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/spring_config
-    username: root
-    password: root
-
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-    database-platform: org.hibernate.dialect.MySQLDialect
-    properties:
-      hibernate:
-        show_sql: true
-        use_sql_comments: true
-        format_sql: true
-    database: mysql
-
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    registerWithEureka: true
-    #是否拉取并缓存其他服务注册表副本到本地
-    fetchRegistry: true
-    serviceUrl:
-      eureka-server-port: 11111
