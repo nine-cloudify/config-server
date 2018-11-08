@@ -1,3 +1,7 @@
+info:
+  description: Spring Cloud Config  Server
+
 spring:
   profiles:
-    active: dev
+    active:
+      - dev

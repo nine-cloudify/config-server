@@ -1,15 +1,16 @@
 package com.springcloudify.cloudy.configserver;
 
-import org.springframework.boot.WebApplicationType;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.config.server.EnableConfigServer;
 
-@SpringBootApplication
+@SpringCloudApplication
 @EnableConfigServer
+@EntityScan(basePackages = "com.**.entity")
 public class ConfigServerApplication {
 
 	public static void main(String[] args) {
-        new SpringApplicationBuilder(ConfigServerApplication.class).web(WebApplicationType.SERVLET).run(args);
+        SpringApplication.run(ConfigServerApplication.class, args);
 	}
 }

@@ -1,11 +1,72 @@
+server:
+  port: 12001
+
 spring:
   application:
     name: config-server
-  cloud:
-    config:
-      server:
-        git:
-          uri: git@github.com:SpringCloudify/config-repo-demo.git
-server:
-  port: 10001
 
+  profiles:
+    active:
+      - jdbc
+
+  datasource:
+    platform: mysql
+  #    schema: classpath:schema-jdbc.sql
+  #    data: classpath:data-jdbc.sql
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/spring_config
+    username: root
+    password: root
+
+  jpa:
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+      database-platform: org.hibernate.dialect.MySQLDialect
+      properties:
+        hibernate:
+          show_sql: true
+          use_sql_comments: true
+          format_sql: true
+      database: mysql
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      server:
+        default-label: master
+        jdbc:
+          sql: SELECT `KEY`, `VALUE` from `PROPERTIES` where `APPLICATION`=? and `PROFILE`=? and `LABEL`=?
+          order: 1
+#        git:
+#          uri: git@github.com:SpringCloudify/config-repo-demo.git
+
+eureka:
+  instance:
+    appname: config-server
+    hostname: localhost
+    non-secure-port: 11001
+    instance-id: config-server@${eureka.instance.hostname}:${server.port}:${random.int}
+
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.non-secure-port:11001}/eureka/
+
+
+encrypt:
+  key: hes@config&server|key
