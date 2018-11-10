@@ -59,7 +59,7 @@ eureka:
     appname: config-server
     hostname: localhost
     non-secure-port: 11001
-    instance-id: config-server@${eureka.instance.hostname}:${server.port}:${random.int}
+    instance-id: config-server@${eureka.instance.hostname}:${server.port}
 
   client:
     registerWithEureka: true

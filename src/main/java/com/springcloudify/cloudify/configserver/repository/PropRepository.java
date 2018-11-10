@@ -1,6 +1,6 @@
-package com.springcloudify.cloudy.configserver.repository;
+package com.springcloudify.cloudify.configserver.repository;
 
-import com.springcloudify.cloudy.configserver.entity.Properties;
+import com.springcloudify.cloudify.configserver.entity.Properties;
 import org.springframework.data.repository.CrudRepository;
 
 /**

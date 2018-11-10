@@ -7,7 +7,7 @@ spring:
 
   profiles:
     active:
-      - jdbc
+      - git
 
   datasource:
     platform: mysql
@@ -48,18 +48,20 @@ spring:
         service-id: config-server
       server:
         default-label: master
-        jdbc:
-          sql: SELECT `KEY`, `VALUE` from `PROPERTIES` where `APPLICATION`=? and `PROFILE`=? and `LABEL`=?
-          order: 1
-#        git:
-#          uri: git@github.com:SpringCloudify/config-repo-demo.git
+#        jdbc:
+#          sql: SELECT `KEY`, `VALUE` from `PROPERTIES` where `APPLICATION`=? and `PROFILE`=? and `LABEL`=?
+#          order: 1
+        git:
+          uri: git@github.com:SpringCloudify/config-repo-demo.git
+          username: NineSwordsMonster
+          password: mima4Github
 
 eureka:
   instance:
     appname: config-server
     hostname: localhost
     non-secure-port: 11001
-    instance-id: config-server@${eureka.instance.hostname}:${server.port}:${random.int}
+    instance-id: config-server@${eureka.instance.hostname}:${server.port}
 
   client:
     registerWithEureka: true

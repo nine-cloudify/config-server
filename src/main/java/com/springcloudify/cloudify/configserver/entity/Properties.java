@@ -1,4 +1,4 @@
-package com.springcloudify.cloudy.configserver.entity;
+package com.springcloudify.cloudify.configserver.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
