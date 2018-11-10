@@ -54,7 +54,7 @@ spring:
         git:
           uri: git@github.com:SpringCloudify/config-repo-demo.git
           username: NineSwordsMonster
-          password: mima4Github
+          password: ***
 
 eureka:
   instance:
