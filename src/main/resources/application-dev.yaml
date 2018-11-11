@@ -9,26 +9,26 @@ spring:
     active:
       - git
 
-  datasource:
-    platform: mysql
-  #    schema: classpath:schema-jdbc.sql
-  #    data: classpath:data-jdbc.sql
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/spring_config
-    username: root
-    password: root
-
-  jpa:
-      show-sql: true
-      hibernate:
-        ddl-auto: update
-      database-platform: org.hibernate.dialect.MySQLDialect
-      properties:
-        hibernate:
-          show_sql: true
-          use_sql_comments: true
-          format_sql: true
-      database: mysql
+#  datasource:
+#    platform: mysql
+#  #    schema: classpath:schema-jdbc.sql
+#  #    data: classpath:data-jdbc.sql
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/spring_config
+#    username: root
+#    password: root
+#
+#  jpa:
+#      show-sql: true
+#      hibernate:
+#        ddl-auto: update
+#      database-platform: org.hibernate.dialect.MySQLDialect
+#      properties:
+#        hibernate:
+#          show_sql: true
+#          use_sql_comments: true
+#          format_sql: true
+#      database: mysql
 
   rabbitmq:
     host: localhost
@@ -54,7 +54,7 @@ spring:
         git:
           uri: git@github.com:SpringCloudify/config-repo-demo.git
           username: NineSwordsMonster
-          password: ***
+          password: mima4Github
 
 eureka:
   instance:
