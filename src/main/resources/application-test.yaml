@@ -7,28 +7,28 @@ spring:
 
   profiles:
     active:
-      - jdbc
+      - git
 
-  datasource:
-    platform: mysql
-  #    schema: classpath:schema-jdbc.sql
-  #    data: classpath:data-jdbc.sql
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/spring_config
-    username: root
-    password: root
+#  datasource:
+#    platform: mysql
+#  #    schema: classpath:schema-jdbc.sql
+#  #    data: classpath:data-jdbc.sql
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/spring_config
+#    username: root
+#    password: root
 
-  jpa:
-      show-sql: true
-      hibernate:
-        ddl-auto: update
-      database-platform: org.hibernate.dialect.MySQLDialect
-      properties:
-        hibernate:
-          show_sql: true
-          use_sql_comments: true
-          format_sql: true
-      database: mysql
+#  jpa:
+#      show-sql: true
+#      hibernate:
+#        ddl-auto: update
+#      database-platform: org.hibernate.dialect.MySQLDialect
+#      properties:
+#        hibernate:
+#          show_sql: true
+#          use_sql_comments: true
+#          format_sql: true
+#      database: mysql
 
   rabbitmq:
     host: localhost
@@ -48,11 +48,19 @@ spring:
         service-id: config-server
       server:
         default-label: master
-        jdbc:
-          sql: SELECT `KEY`, `VALUE` from `PROPERTIES` where `APPLICATION`=? and `PROFILE`=? and `LABEL`=?
-          order: 1
-#        git:
-#          uri: git@github.com:SpringCloudify/config-repo-demo.git
+#        jdbc:
+#          sql: SELECT `KEY`, `VALUE` from `PROPERTIES` where `APPLICATION`=? and `PROFILE`=? and `LABEL`=?
+#          order: 1
+        git:
+          uri: git@github.com:SpringCloudify/config-repo-demo.git
+
+#    consul:
+#      host: ${consul.instance.hostname:localhost}
+#      port: ${consul.client.serviceUrl.consul-server-port:8500}
+#      discovery:
+#        healthCheckInterval: 15s
+#        instanceId: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
+
 
 eureka:
   instance:
@@ -66,7 +74,8 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.non-secure-port:11001}/eureka/
-
+    healthcheck:
+      enabled: true
 
 encrypt:
   key: hes@config&server|key
