@@ -26,7 +26,7 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
         <!--        <dependency>-->
@@ -60,10 +60,22 @@
         <!--            <scope>runtime</scope>-->
         <!--        </dependency>-->
 
+<<<<<<< HEAD
         <!--        <dependency>-->
         <!--            <groupId>mysql</groupId>-->
         <!--            <artifactId>mysql-connector-java</artifactId>-->
         <!--        </dependency>-->
+=======
+        <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-bus-dependencies</artifactId>
+            <type>pom</type>
+        </dependency>
+>>>>>>> 5a637ee84ecac0ef54ffb695a531c15ff3130f7a
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -75,6 +87,7 @@
             <artifactId>spring-cloud-config-monitor</artifactId>
         </dependency>
 
+<<<<<<< HEAD
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
@@ -89,5 +102,58 @@
             </plugin>
         </plugins>
     </build>
+=======
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-starter-stream-rabbit</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-bus</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-stream-binder-rabbit</artifactId>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+	</dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+>>>>>>> 5a637ee84ecac0ef54ffb695a531c15ff3130f7a
 
 </project>

@@ -1,4 +1,4 @@
-//package com.springcloudify.cloudy.configserver.config;
+//package com.springcloudify.cloudify.configserver.config;
 //
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.cloud.config.environment.Environment;
