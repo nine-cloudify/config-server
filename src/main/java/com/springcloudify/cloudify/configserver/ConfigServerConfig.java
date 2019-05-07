@@ -1,4 +1,4 @@
-package com.springcloudify.cloudy.configserver;
+package com.springcloudify.cloudify.configserver;
 
 import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.context.annotation.Configuration;
